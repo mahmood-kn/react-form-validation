@@ -10,6 +10,7 @@ const Input = ({
   valid,
   touched,
   errorMsg,
+  blured,
 }) => {
   const classNames = [classes.formControl];
   if (!valid && touched) {
@@ -21,7 +22,12 @@ const Input = ({
   return (
     <div className={classNames.join(' ')}>
       <label htmlFor={forLabel}>{lable}</label>
-      <input type={type} placeholder={placeholder} onChange={changed} />
+      <input
+        type={type}
+        placeholder={placeholder}
+        onChange={changed}
+        onBlur={blured}
+      />
       <small>{errorMsg}</small>
     </div>
   );

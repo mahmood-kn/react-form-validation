@@ -38,11 +38,24 @@ function Layout() {
     e.preventDefault();
   };
 
+  const inputBlured = (e, id) => {
+    if (e.target.value.trim() === '') {
+      dispatch({
+        type: 'blured',
+        id,
+      });
+    }
+  };
+
   return (
     <div className={classes.container}>
       <form className={classes.form} onSubmit={submitForm}>
         <h2>Register With Us</h2>
-        <Inputs InputsData={formArray} onChanges={inputChanged} />
+        <Inputs
+          InputsData={formArray}
+          onChanges={inputChanged}
+          inputBlured={inputBlured}
+        />
         <button disabled={!formValidation()} type='submit'>
           Submit
         </button>

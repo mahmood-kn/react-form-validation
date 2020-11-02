@@ -1,7 +1,7 @@
-import React from "react";
-import Input from "../../components/Input/Input";
+import React from 'react';
+import Input from '../../components/Input/Input';
 
-const Inputs = ({ InputsData, onChanges }) => (
+const Inputs = ({ InputsData, onChanges, inputBlured }) => (
   <>
     {InputsData.map((formEl) => (
       <Input
@@ -14,6 +14,7 @@ const Inputs = ({ InputsData, onChanges }) => (
         valid={formEl.config.valid}
         touched={formEl.config.touched}
         errorMsg={formEl.config.errMsg}
+        blured={(e) => inputBlured(e, formEl.id)}
       />
     ))}
   </>

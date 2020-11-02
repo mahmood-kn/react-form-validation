@@ -20,10 +20,23 @@ const changeInputValue = (state, action) => {
   return updateState;
 };
 
+const blured = (state, action) => {
+  const updatedBlur = updateObject(state.formData[action.id], {
+    touched: false,
+  });
+  const updatedForm = updateObject(state.formData, {
+    [action.id]: updatedBlur,
+  });
+  const updatedState = updateObject(state, { formData: updatedForm });
+  return updatedState;
+};
+
 export default function reducer(state, action) {
   switch (action.type) {
     case 'changeInputValue':
       return changeInputValue(state, action);
+    case 'blured':
+      return blured(state, action);
     default:
       throw new Error('WTF?!');
   }
