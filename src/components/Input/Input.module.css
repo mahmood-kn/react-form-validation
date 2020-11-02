@@ -1,0 +1,42 @@
+.formControl {
+  margin: 1rem 0;
+}
+
+.formControl label {
+  display: block;
+  color: #777;
+  text-align: left;
+}
+
+.formControl input {
+  border: 2px #f0f0f0 solid;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  display: block;
+  width: 100%;
+}
+
+.formControl input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.formControl.error input {
+  outline: 0;
+  border-color: #e74c3c;
+}
+
+.formControl.success input {
+  outline: 0;
+  border-color: #2ecc71;
+}
+
+.formControl small {
+  visibility: hidden;
+}
+
+.formControl.error small {
+  visibility: visible;
+  color: #e74c3c;
+}
